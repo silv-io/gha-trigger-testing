@@ -1,0 +1,18 @@
+name: Test GHA Triggers
+
+on:
+  push:
+    paths:
+      - '**'
+      - '!.github/**'
+    branches:
+      - master
+    tags:
+      - 'v*'
+
+jobs:
+  main:
+    steps:
+      - name: "Show data"
+        run: |
+          echo ${{ github.ref }}
